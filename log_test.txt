@@ -1,0 +1,107 @@
+dataset 規劃
+train_cnv: 258
+train_pcv: 323
+test_cnv : 64
+test_pcv : 80
+
+dataset: 每5個挑1個
+
+case1:
+(default) epoch=20, lr = 0.01, model=AGG_16, optimizer=SGD:
+	epoch:20
+	init_lr=0.01
+	loss function: cross entropy
+	optimizer: sgd
+	train_accuracy: 0.6816
+	train_loss: 0.7170
+	test_accuracy_cnv: 62.5000%
+	test_accuracy_pcv: 16.2580%
+	test_accuracy_all: 36.8056% 
+	Best model name : model-0.69-best_train_acc.pth
+
+case2:
+(Failed) epoch=20(>20, 已收斂), lr=0.01, model=AGG_16, optimizer=Adam:
+	epoch:20
+	init_lr=0.01
+	loss function: cross entropy
+	optimizer: Adam
+	train_accuracy: 0.5523
+	train_loss: 0.6884
+	test_accuracy_cnv: 0.0000%
+	test_accuracy_pcv: 100.0000%
+	test_accuracy_all: 55.5556% 
+	Best model name : /model-0.56-best_train_acc.pth
+
+case3:
+(Success) epoch=50, lr=0.01, model=resnet50, optimizer=SGD:
+	epoch:50
+	init_lr=0.01
+	loss function: cross entropy
+	optimizer: SGD
+	train_accuracy: 0.7487 
+	train_loss: 0.5391
+	test_accuracy_cnv: 73.4375%
+	test_accuracy_pcv: 83.7500%
+	test_accuracy_all: 79.1667% 
+	Best model name : /model-0.75-best_train_acc.pth
+
+
+
+case4:
+(Success) epoch=50, lr=0.01, model=resnet50(pretrained=True), Transfering learning, optimizer=SGD:
+	epoch:50
+	init_lr=0.01
+	loss function: cross entropy
+	optimizer: SGD
+	train_accuracy: 0.9002
+	train_loss: 0.2548
+	test_accuracy_cnv: 87.5000%
+	test_accuracy_pcv: 87.5000%
+	test_accuracy_all: 87.5000% 
+	Best model name : ./weights/model-0.92-best_train_acc.pth
+
+
+case5:
+(Failed) epoch=50, lr=0.01, model=resnet50(pretrained=True), Transfering learning, optimizer=SGD, data augmentation:
+	epoch:50
+	init_lr=0.01
+	loss function: cross entropy
+	optimizer: SGD
+	train_accuracy: 0.7212
+	train_loss: 0.5656
+	test_accuracy_cnv: 84.3750%
+	test_accuracy_pcv: 68.7500%
+	test_accuracy_all: 75.6944% 
+	Best model name : ./weights/model-0.73-best_train_acc.pth
+
+
+
+case6:
+(Failed) epoch=100, lr=0.001, model=resnet152(pretrained=True), Transfering learning, optimizer=SGD, data augmentation:
+	epoch:50
+	init_lr=0.001
+	model=ResNet152
+	loss function: cross entropy
+	optimizer: SGD
+	
+	Best model name : ./weights/model-1.00-best_train_acc.pth
+
+case7:
+(Success) epoch=100, lr=0.001, model=resnet152(pretrained=True), Transfering learning, optimizer=SGD, data augmentation:
+	dataset: 10 times random_split train and val 
+	epoch:100
+	init_lr=0.001
+	model=ResNet101
+	loss function: cross entropy
+	optimizer: SGD
+	test_avg_accuracy: 94.8355%
+	Best model name : ./weights/model-1.00-8-best_val_acc.pth
+
+方案
+
+延長 epoch 次數：
+
+更換 model:
+
+更換 optimizer:
+
