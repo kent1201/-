@@ -36,4 +36,7 @@ Resnet
 
 `utils.py` the hyper parameters setting.
 
+## Project results
+
+Please see the [paper](https://github.com/kent1201/Medical-Image-Classification/blob/main/MI_Proj1_team3.pdf).
 
