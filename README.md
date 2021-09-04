@@ -39,3 +39,13 @@ Resnet
 
 Please see the [paper](https://github.com/kent1201/Medical-Image-Classification/blob/main/MI_Proj1_team3.pdf).
 
+## How to use
+>Set the [utils.py](https://github.com/kent1201/Medical-Image-Classification/blob/main/utils.py) 
+>
+>conda create your environment 
+>
+>pip install the requirments 
+>
+>run train.py
+
+
