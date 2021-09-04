@@ -8,3 +8,5 @@ The purpose of this paper is to use deep learning to identify and classify polyp
 ## Project architecture
 VGG 16
 
+![VGG 16](https://github.com/kent1201/Medical-Image-Classification/blob/main/VGG16.png)
+
