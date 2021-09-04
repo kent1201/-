@@ -12,4 +12,8 @@ VGG 16
 
 Resnet
 
+![Resnet](https://github.com/kent1201/Medical-Image-Classification/blob/main/Resnet.png)
+
+資料來源: https://blog.csdn.net/zzc15806
+
 
